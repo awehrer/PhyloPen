@@ -1,0 +1,256 @@
+{
+    "data": {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "children": [
+                                                                    {
+                                                                        "children": [
+                                                                            {
+                                                                                "edge_data": {
+                                                                                    "weight": 0.055
+                                                                                },
+                                                                                "node_data": {
+                                                                                    "node name": "fuliginosa",
+                                                                                    "node weight": 0.58333
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "edge_data": {
+                                                                                    "weight": 0.055
+                                                                                },
+                                                                                "node_data": {
+                                                                                    "node name": "fortis",
+                                                                                    "node weight": 0.58333
+                                                                                }
+                                                                            }
+                                                                        ],
+                                                                        "edge_data": {
+                                                                            "weight": 0.055
+                                                                        },
+                                                                        "node_data": {
+                                                                            "node name": "",
+                                                                            "node weight": 0.52833
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "edge_data": {
+                                                                            "weight": 0.11
+                                                                        },
+                                                                        "node_data": {
+                                                                            "node name": "magnirostris",
+                                                                            "node weight": 0.58333
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "edge_data": {
+                                                                    "weight": 0.07333
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "",
+                                                                    "node weight": 0.47333
+                                                                }
+                                                            },
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 0.18333
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "conirostris",
+                                                                    "node weight": 0.5833299999999999
+                                                                }
+                                                            }
+                                                        ],
+                                                        "edge_data": {
+                                                            "weight": 0.00917
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "",
+                                                            "node weight": 0.39999999999999997
+                                                        }
+                                                    },
+                                                    {
+                                                        "edge_data": {
+                                                            "weight": 0.1925
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "scandens",
+                                                            "node weight": 0.5833299999999999
+                                                        }
+                                                    }
+                                                ],
+                                                "edge_data": {
+                                                    "weight": 0.0355
+                                                },
+                                                "node_data": {
+                                                    "node name": "",
+                                                    "node weight": 0.39082999999999996
+                                                }
+                                            },
+                                            {
+                                                "edge_data": {
+                                                    "weight": 0.228
+                                                },
+                                                "node_data": {
+                                                    "node name": "difficilis",
+                                                    "node weight": 0.58333
+                                                }
+                                            }
+                                        ],
+                                        "edge_data": {
+                                            "weight": 0.10346
+                                        },
+                                        "node_data": {
+                                            "node name": "",
+                                            "node weight": 0.35533
+                                        }
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "edge_data": {
+                                                    "weight": 0.08667
+                                                },
+                                                "node_data": {
+                                                    "node name": "pallida",
+                                                    "node weight": 0.58333
+                                                }
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 0.02
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "parvulus",
+                                                                    "node weight": 0.58333
+                                                                }
+                                                            },
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 0.02
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "psittacula",
+                                                                    "node weight": 0.58333
+                                                                }
+                                                            }
+                                                        ],
+                                                        "edge_data": {
+                                                            "weight": 0.015
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "",
+                                                            "node weight": 0.56333
+                                                        }
+                                                    },
+                                                    {
+                                                        "edge_data": {
+                                                            "weight": 0.035
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "pauper",
+                                                            "node weight": 0.58333
+                                                        }
+                                                    }
+                                                ],
+                                                "edge_data": {
+                                                    "weight": 0.05167
+                                                },
+                                                "node_data": {
+                                                    "node name": "",
+                                                    "node weight": 0.54833
+                                                }
+                                            }
+                                        ],
+                                        "edge_data": {
+                                            "weight": 0.24479
+                                        },
+                                        "node_data": {
+                                            "node name": "",
+                                            "node weight": 0.49666
+                                        }
+                                    }
+                                ],
+                                "edge_data": {
+                                    "weight": 0.13404
+                                },
+                                "node_data": {
+                                    "node name": "",
+                                    "node weight": 0.25187
+                                }
+                            },
+                            {
+                                "edge_data": {
+                                    "weight": 0.4655
+                                },
+                                "node_data": {
+                                    "node name": "Platyspiza",
+                                    "node weight": 0.58333
+                                }
+                            }
+                        ],
+                        "edge_data": {
+                            "weight": 0.06859
+                        },
+                        "node_data": {
+                            "node name": "",
+                            "node weight": 0.11782999999999999
+                        }
+                    },
+                    {
+                        "edge_data": {
+                            "weight": 0.53409
+                        },
+                        "node_data": {
+                            "node name": "fusca",
+                            "node weight": 0.5833299999999999
+                        }
+                    }
+                ],
+                "edge_data": {
+                    "weight": 0.04924
+                },
+                "node_data": {
+                    "node name": "",
+                    "node weight": 0.04924
+                }
+            },
+            {
+                "edge_data": {
+                    "weight": 0.58333
+                },
+                "node_data": {
+                    "node name": "Pinaroloxias",
+                    "node weight": 0.58333
+                }
+            }
+        ],
+        "edge_fields": [
+            "weight"
+        ],
+        "node_data": {
+            "node name": "",
+            "node weight": 0.0
+        },
+        "node_fields": [
+            "node name",
+            "node weight"
+        ]
+    },
+    "format": "nested"
+}

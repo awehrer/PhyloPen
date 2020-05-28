@@ -1,0 +1,252 @@
+{
+    "data": {
+        "children": [
+            {
+                "edge_data": {
+                    "weight": 0.021672999999999998
+                },
+                "node_data": {
+                    "node name": "C. merriami",
+                    "node weight": 0.021672999999999998
+                }
+            },
+            {
+                "edge_data": {
+                    "weight": 0.022816000000000003
+                },
+                "node_data": {
+                    "node name": "C. perotensis",
+                    "node weight": 0.022816000000000003
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "edge_data": {
+                                    "weight": 0.04594599999999999
+                                },
+                                "node_data": {
+                                    "node name": "C. castanops",
+                                    "node weight": 0.091638
+                                }
+                            },
+                            {
+                                "edge_data": {
+                                    "weight": 0.044927999999999996
+                                },
+                                "node_data": {
+                                    "node name": "C. goldmani",
+                                    "node weight": 0.09062
+                                }
+                            }
+                        ],
+                        "edge_data": {
+                            "weight": 0.019172999999999996
+                        },
+                        "node_data": {
+                            "node name": "",
+                            "node weight": 0.04569200000000001
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "edge_data": {
+                                    "weight": 0.06103299999999999
+                                },
+                                "node_data": {
+                                    "node name": "C. tylorhinus",
+                                    "node weight": 0.095289
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "edge_data": {
+                                            "weight": 0.080313
+                                        },
+                                        "node_data": {
+                                            "node name": "O. grandis",
+                                            "node weight": 0.129497
+                                        }
+                                    },
+                                    {
+                                        "edge_data": {
+                                            "weight": 0.082424
+                                        },
+                                        "node_data": {
+                                            "node name": "Z. trichopus",
+                                            "node weight": 0.131608
+                                        }
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "edge_data": {
+                                                    "weight": 0.089198
+                                                },
+                                                "node_data": {
+                                                    "node name": "G. breviceps",
+                                                    "node weight": 0.158559
+                                                }
+                                            },
+                                            {
+                                                "edge_data": {
+                                                    "weight": 0.065691
+                                                },
+                                                "node_data": {
+                                                    "node name": "G. personatus",
+                                                    "node weight": 0.135052
+                                                }
+                                            }
+                                        ],
+                                        "edge_data": {
+                                            "weight": 0.020177
+                                        },
+                                        "node_data": {
+                                            "node name": "",
+                                            "node weight": 0.069361
+                                        }
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "edge_data": {
+                                                    "weight": 0.071094
+                                                },
+                                                "node_data": {
+                                                    "node name": "P. bulleri",
+                                                    "node weight": 0.132756
+                                                }
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "edge_data": {
+                                                            "weight": 0.037453
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "O. hispidus",
+                                                            "node weight": 0.11449100000000001
+                                                        }
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 2.4999999999997247e-05
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "O. cherriei",
+                                                                    "node weight": 0.125839
+                                                                }
+                                                            },
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 0.05044699999999999
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "O. heterodus",
+                                                                    "node weight": 0.176261
+                                                                }
+                                                            }
+                                                        ],
+                                                        "edge_data": {
+                                                            "weight": 0.048776
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "",
+                                                            "node weight": 0.125814
+                                                        }
+                                                    },
+                                                    {
+                                                        "children": [
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 0.024695999999999996
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "O. underwoodi",
+                                                                    "node weight": 0.139191
+                                                                }
+                                                            },
+                                                            {
+                                                                "edge_data": {
+                                                                    "weight": 0.071025
+                                                                },
+                                                                "node_data": {
+                                                                    "node name": "O. cavator",
+                                                                    "node weight": 0.18552000000000002
+                                                                }
+                                                            }
+                                                        ],
+                                                        "edge_data": {
+                                                            "weight": 0.037457000000000004
+                                                        },
+                                                        "node_data": {
+                                                            "node name": "",
+                                                            "node weight": 0.11449500000000001
+                                                        }
+                                                    }
+                                                ],
+                                                "edge_data": {
+                                                    "weight": 0.015376
+                                                },
+                                                "node_data": {
+                                                    "node name": "",
+                                                    "node weight": 0.07703800000000001
+                                                }
+                                            }
+                                        ],
+                                        "edge_data": {
+                                            "weight": 0.012478000000000003
+                                        },
+                                        "node_data": {
+                                            "node name": "",
+                                            "node weight": 0.06166200000000001
+                                        }
+                                    }
+                                ],
+                                "edge_data": {
+                                    "weight": 0.014927999999999997
+                                },
+                                "node_data": {
+                                    "node name": "",
+                                    "node weight": 0.049184000000000005
+                                }
+                            }
+                        ],
+                        "edge_data": {
+                            "weight": 0.007736999999999994
+                        },
+                        "node_data": {
+                            "node name": "",
+                            "node weight": 0.03425600000000001
+                        }
+                    }
+                ],
+                "edge_data": {
+                    "weight": 0.026519000000000015
+                },
+                "node_data": {
+                    "node name": "",
+                    "node weight": 0.026519000000000015
+                }
+            }
+        ],
+        "edge_fields": [
+            "weight"
+        ],
+        "node_data": {
+            "node name": "",
+            "node weight": 0.0
+        },
+        "node_fields": [
+            "node name",
+            "node weight"
+        ]
+    },
+    "format": "nested"
+}

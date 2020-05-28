@@ -1,0 +1,1 @@
+java -Dglass.win.uiScale=1.00 -jar dist/PhyloPen.jar

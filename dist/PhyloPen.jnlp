@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="PhyloPen.jnlp">
+  <information>
+    <title>PhyloPen</title>
+    <vendor>Arbor Workflows</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Dglass.win.uiScale=1.00 "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="PhyloPen.jar" size="469519" download="eager" />
+    <jar href="lib/gson-2.3.jar" size="224816" download="eager" />
+    <jar href="lib/jpen-2.jar" size="237720" download="eager" />
+    <jar href="lib/jsoup-1.8.1.jar" size="325227" download="eager" />
+  </resources>
+<security>
+  <all-permissions/>
+</security>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PhyloPen" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="phylopen.PhyloPen"  name="PhyloPen" />
+  <update check="always"/>
+</jnlp>

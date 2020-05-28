@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import phylopen.utility.*?>
+<?import javafx.scene.image.*?>
+<?import phylopen.utility.ink.*?>
+<?import phylopen.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="gridMain" fx:controller="phylopen.MainWindowController" style="-fx-background-color: white;">
+    <fx:define>
+        <RemScaler fx:id="m" />
+    </fx:define>
+    
+    <columnConstraints>
+        <ColumnConstraints minWidth="${25 * m.rem}" prefWidth="${83.33333 * m.rem}" hgrow="ALWAYS" />
+    </columnConstraints>
+    
+    <rowConstraints>
+        <RowConstraints minHeight="${2.0833333 * m.rem}" />
+        <RowConstraints minHeight="${3 * m.rem}" />
+        <RowConstraints prefHeight="${48 * m.rem}" vgrow="ALWAYS" />
+        <RowConstraints minHeight="${3 * m.rem}" />
+    </rowConstraints>
+    
+    <children>
+        
+        <MenuBar fx:id="topMenu" GridPane.fillWidth="true" GridPane.fillHeight="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Menu text="File">
+                <MenuItem fx:id="loginMenuItem" text="Login" onAction="#handleLoginAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/login_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+                <Menu fx:id="userMenuItem" text="Logged in as Guest" visible="false">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/login_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                    <items>
+                        <MenuItem text="Log out" onAction="#handleLogOutAction">
+                            <graphic>
+                                <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                                    <Image url="file:resources/images/login_icon.png"/>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem text="Change password" onAction="#handleChgPassAction">
+                            <graphic>
+                                <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                                    <Image url="file:resources/images/change_info_icon.png"/>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem text="View/Update account information" onAction="#handleUpdateUserInfoAction">
+                            <graphic>
+                                <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                                    <Image url="file:resources/images/change_info_icon.png"/>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <MenuItem text="Open from Arbor" onAction="#handleOpenAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/open_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+                <SeparatorMenuItem />
+                <MenuItem text="Save As Local File..." onAction="#handleSaveAsLocalFileAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/save_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+                <MenuItem text="Open Local File" onAction="#handleOpenLocalFileAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/open_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+                <MenuItem text="Open Lessons" onAction="#handleOpenLessonsAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/open_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+                <SeparatorMenuItem />
+                <MenuItem text="Options" onAction="#handleOptionsAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/change_info_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+                <SeparatorMenuItem />
+                <MenuItem text="Exit" onAction="#handleExitAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/exit_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem  fx:id="undoMenuItem" disable="true" text="Undo" onAction="#handleUndoAction" accelerator="Shortcut+z">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/undo_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+            </Menu>
+            <Menu text="Tools">
+                <MenuItem fx:id="snapshotItem" text="Take image snapshot" onAction="#handleSnapshotAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/snapshot_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+            </Menu>
+            <Menu text="Help">
+                <MenuItem fx:id="commandHelpItem" text="Command Help" onAction="#handleCommandHelpAction">
+                    <graphic>
+                        <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                            <Image url="file:resources/images/manual_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </MenuItem>
+            </Menu>
+        </MenuBar>
+        
+        <HBox alignment="CENTER_LEFT" GridPane.fillHeight="true" GridPane.fillWidth="true" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-background-color: whitesmoke;">
+            <!-- css insets: top, right, bottom, and left edges of the region, in that order -->
+            <Label fx:id="fileNameLabel" text="File: " style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.0em 0.0em 0.0em 0.5em;" />
+            <Region HBox.hgrow="ALWAYS" /> 
+            <Button fx:id="loginButton" text="Login" onAction="#handleLoginAction">
+                <graphic>
+                    <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true">
+                        <Image url="file:resources/images/login_icon.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <SplitMenuButton fx:id="userButton" text="" visible="false" minWidth="0" maxWidth="0" >
+                <items>
+                    <MenuItem text="Log out" onAction="#handleLogOutAction">
+                        <graphic>
+                            <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                                <Image url="file:resources/images/login_icon.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <MenuItem text="Change password" onAction="#handleChgPassAction">
+                        <graphic>
+                            <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                                <Image url="file:resources/images/change_info_icon.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                    <MenuItem text="View/Update account information" onAction="#handleUpdateUserInfoAction">
+                        <graphic>
+                            <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true" >
+                                <Image url="file:resources/images/change_info_icon.png"/>
+                            </ImageView>
+                        </graphic>
+                    </MenuItem>
+                </items>
+                <graphic>
+                    <ImageView fitWidth="${1.66667 * m.rem}" preserveRatio="true">
+                        <Image url="file:resources/images/login_icon.png"/>
+                    </ImageView>
+                </graphic>
+            </SplitMenuButton>
+            <Region minWidth="15" prefWidth="15" maxWidth="15" />
+        </HBox>
+        
+        <SplitPane fx:id="canvasSplitPane" GridPane.rowIndex="2" GridPane.columnIndex="0" orientation="HORIZONTAL" dividerPositions="0.7">
+            <items>
+                
+                <BorderPane fx:id="canvasBorderPane">
+                    <center>
+                        <ScrollPane fx:id="canvasViewport" vbarPolicy="NEVER" hbarPolicy="NEVER" pannable="false" focusTraversable="true">
+                            <content>
+                                <PhyloPenCanvas fx:id="phyloPenCanvas" minWidth="1000" minHeight="1000" onStylusMoved="#handleStylusMoved" onStylusDown="#handleStylusDown" />
+                            </content>
+                        </ScrollPane>
+                    </center>
+                    <right>
+                        <ScrollBar fx:id="vInnerPaneScrollBar" orientation="VERTICAL" min="0" max="0" minWidth="${2.0 * m.rem}" prefWidth="${2.0 * m.rem}" />
+                    </right>
+                    <bottom>
+                        <ScrollBar fx:id="hInnerPaneScrollBar" orientation="HORIZONTAL" min="0" max="0" minHeight="${2.0 * m.rem}" prefHeight="${2.0 * m.rem}" />
+                    </bottom>
+                </BorderPane>
+                
+                <GridPane fx:id="sidebarGrid" onSwipeLeft="#handleSidebarSwipe" onSwipeRight="#handleSidebarSwipe">
+                    
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+                    
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints /> 
+                    </rowConstraints>
+                    
+                    <children>
+                        <TabPane fx:id="sideMenuTabbedPane" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.fillHeight="true">
+                            <Tab text="Control" closable="false">
+                                <content>
+                                    <VBox style="-fx-border-width: 1; -fx-border-color: white black black black; -fx-border-style: solid;">
+                                        <TitledBorderPane title="Layout" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.25em 0.666666667em 0.25em 0.66666667em;">
+                                            <content>
+                                                <VBox style="-fx-spacing: 4;">
+                                                    <CheckBox selected="false" fx:id="scaledBranchesCheckbox" text="Branches scaled by length" />
+                                                    <CheckBox selected="true" fx:id="showSpeciesNamesCheckbox" text="Show species names" />
+                                                    <CheckBox selected="true" fx:id="showIntermediateBranchLengthsCheckbox" text="Show intermediate branch lengths" />
+                                                    <CheckBox selected="false" fx:id="showFinalBranchLengthsOnBranchesCheckbox" text="Show final branch lengths on branches" />
+                                                    <CheckBox selected="true" fx:id="showFinalBranchLengthsWithLeafNamesCheckbox" text="Show final branch lengths with leaf names" />
+                                                    <CheckBox selected="true" fx:id="showAncestorLabelCheckbox" text="Show ancestor labels" />
+                                                    <CheckBox selected="true" fx:id="showHyperlinksCheckbox" text="Enable hyperlinks" />
+                                                    <CheckBox selected="true" fx:id="showAnnotationPlaceholdersCheckbox" text="Show annotation placeholders" />
+                                                    <CheckBox selected="true" fx:id="showLeafImagesCheckbox" text="Show image at leaf" />
+                                                </VBox>
+                                            </content>
+                                        </TitledBorderPane>
+                                        <TitledBorderPane title="Options" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.25em 0.666666667em 0.25em 0.66666667em;">
+                                            <content>
+                                                <VBox fx:id="optionsContentPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                    <VBox fx:id="inkOptionsPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                        <HBox fx:id="inkButtonPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                            <Button fx:id="clearInkButton" text="Clear ink" onAction="#handleClearInkAction" />
+                                                            <Button text="Train Recognition" onAction="#handleTrainingRecognition" fx:id="trainingButton" />
+                                                        </HBox>
+                                                    </VBox>
+                                                    <VBox fx:id="mouseOptionsPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                        <HBox fx:id="cutPasteButtonPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                            <Button fx:id="cutCladeButton" text="Cut Clade" onAction="#handleCutCladeAction" minWidth="75" disable="true" />
+                                                            <Button fx:id="pasteCladeButton" text="Paste Clade" onAction="#handlePasteCladeAction" minWidth="75" disable="true"  />
+                                                        </HBox>
+                                                        <HBox fx:id="deletionPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                            <Button fx:id="deleteCladeButton" text="Delete Clade" onAction="#handleDeleteCladeAction" minWidth="75" disable="true" />
+                                                            <CheckBox selected="true" fx:id="preserveTreeDimensionsOnDeleteCheckbox" text="Preserve tree dimensions" disable="true"  />
+                                                        </HBox>
+                                                        <Button fx:id="rotateCladeButton" text="Rotate Clade" onAction="#handleRotateCladeAction" disable="true" />
+                                                    </VBox>
+                                                    <VBox fx:id="neutralOptionsPane" alignment="CENTER" style="-fx-spacing: 4;">
+                                                        <Button text="Clear selection" onAction="#handleClearSelectionAction" />
+                                                        <HBox fx:id="annotationButtonBackground" style="-fx-alignment: center;"><Button text="Annotate tree" onAction="#handleAnnotateAction" fx:id="annotateButton" /></HBox>
+                                                    </VBox>
+                                                </VBox>
+                                            </content>
+                                        </TitledBorderPane>
+                                        <TitledBorderPane title="Tree Size" GridPane.rowIndex="1" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.416666667em 0.666666667em 0.25em 0.66666667em;">
+                                            <content>
+                                                <VBox alignment="CENTER">
+                                                    <HBox alignment="CENTER" style="-fx-spacing: 4; -fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.1666667em 0 0.3333333em 0;">
+                                                        <Button text="Width -" onAction="#handleTreeWidthDecreaseAction" style="-fx-font-size: 0.833333em;" />
+                                                        <Button text="Width +" onAction="#handleTreeWidthIncreaseAction" style="-fx-font-size: 0.833333em;" />
+                                                        <Button text="Height -" onAction="#handleTreeHeightDecreaseAction" style="-fx-font-size: 0.833333em;" />
+                                                        <Button text="Height +" onAction="#handleTreeHeightIncreaseAction" style="-fx-font-size: 0.833333em;" />
+                                                    </HBox>
+                                                    <HBox alignment="CENTER" style="-fx-spacing: 4; -fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.1666667em 0 0.8333333em 0;">
+                                                        <Button text="WReset" onAction="#handleTreeWidthResetAction" style="-fx-font-size: 0.833333em;" />
+                                                        <Button text="HReset" onAction="#handleTreeHeightResetAction" style="-fx-font-size: 0.833333em;" />
+                                                        <Button text="Reset All" onAction="#handleTreeDimensionsResetAction" style="-fx-font-size: 0.833333em;" />
+                                                        <Button text="Fit Images" onAction="#handleFitImages" style="-fx-font-size: 0.833333em;" />
+                                                    </HBox>
+                                                    <ScrollPane vbarPolicy="NEVER" hbarPolicy="NEVER" pannable="false" maxWidth="${16.666667 * m.rem}" prefWidth="${16.666667 * m.rem}" minHeight="${8.333333 * m.rem}" maxHeight="${8.333333 * m.rem}" prefHeight="${8.333333 * m.rem}" style="-fx-border-style: solid; -fx-border-color: black; -fx-border-width: 1px;">
+                                                        <content>
+                                                            <TreeResizeInkCanvas fx:id="treeResizeCanvas" minWidth="${16.666667 * m.rem}" minHeight="${8.333333 * m.rem}" style="-fx-background-color: rgb(248, 248, 255);" />
+                                                        </content>
+                                                    </ScrollPane>
+                                                </VBox>
+                                            </content>
+                                        </TitledBorderPane>
+                                    </VBox>
+                                </content>
+                            </Tab>
+                            <Tab text="Minitree" closable="false">
+                                <PhyloTreeInkCanvasModelWIM fx:id="minitree" prefWidth="${280 / 12.0 * m.rem}" prefHeight="${280 / 12.0 * m.rem}" minWidth="${280 / 12.0 * m.rem}" minHeight="${280 / 12.0 * m.rem}" style="-fx-border-width: 1; -fx-border-color: white black black black; -fx-border-style: solid;" />
+                            </Tab>
+                            <Tab text="Customize" closable="false">
+                                <content>
+                                    <VBox style="-fx-border-width: 1; -fx-border-color: white black black black; -fx-border-style: solid;">
+                                        <Label text="Change whole tree or select a part to change:" wrapText="true" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.25em 0.666666667em 0.25em 0.66666667em;"/>
+                                        <GridPane vgap="10" hgap="10" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.25em 0.666666667em 0.25em 0.66666667em;">
+                                            <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Color branches" />
+                                            <ColorPicker disable="false" GridPane.columnIndex="1" fx:id="branchColorChooser" onAction="#handleColorBranchAction"  />
+
+                                            <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Node outline color" />
+                                            <ColorPicker disable="false" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="nodeOutlineColorChooser" onAction="#handleColorNodeOutlineAction" />
+
+                                            <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Node fill color" />
+                                            <ColorPicker disable="false" GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="nodeFillColorChooser" onAction="#handleColorNodeFillAction" />
+                                            
+                                            <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="Branch width" />
+                                            <HBox GridPane.rowIndex="3" GridPane.columnIndex="1" style="-fx-spacing: 8;">
+                                                <Slider fx:id="branchWidthSlider" onValueChange="#handleBranchWidthChange" value="1.0" min="1.0" max="5.0" orientation="HORIZONTAL" />
+                                                <TextField fx:id="branchWidthField" editable="false" text="1.0" alignment="CENTER" minWidth="${(38.0 / 12.0) * m.rem}" prefWidth="${(38.0 / 12.0) * m.rem}" maxWidth="${(38.0 / 12.0) * m.rem}" />
+                                            </HBox>
+                                            
+                                            <Label GridPane.rowIndex="4" GridPane.columnIndex="0" text="Node radius" minWidth="${5.9 * m.rem}" prefWidth="${5.9 * m.rem}" />
+                                            <HBox GridPane.rowIndex="4" GridPane.columnIndex="1" style="-fx-spacing: 8;">
+                                                <Slider fx:id="nodeSizeSlider" onValueChange="#handleNodeSizeChange" onMouseReleased="#handleFinalizeNodeSizeChange" value="5.0" min="1.0" max="30.0" orientation="HORIZONTAL" />
+                                                <TextField fx:id="nodeSizeField" editable="false" text="5.0" alignment="CENTER" minWidth="${(38.0 / 12.0) * m.rem}" prefWidth="${(38.0 / 12.0) * m.rem}" maxWidth="${(38.0 / 12.0) * m.rem}" />
+                                            </HBox>
+                                            
+                                            <Button GridPane.rowIndex="5" GridPane.columnIndex="0" text="Reset" fx:id="resetCustomizeButton" onAction="#handleCustomizationResetAction" />
+                                        </GridPane>
+                                    </VBox>
+                                </content>
+                            </Tab>
+                            <Tab text="Attributes" closable="false">
+                                <VBox style="-fx-border-width: 1; -fx-border-color: white black black black; -fx-border-style: solid;" alignment="TOP_CENTER">
+                                    <HBox>
+                                        <TreeAttributeTable fx:id="attributeTable" prefHeight="20000" />
+                                        <VBox>
+                                            <Button fx:id="deleteAttributeColumnButton" onAction="#handleDeleteAttributeColumnAction" disable="false" prefWidth="${32.0/12.0 * m.rem}" minWidth="${32.0/12.0 * m.rem}" maxWidth="${32.0/12.0 * m.rem}" prefHeight="200">
+                                                <graphic>
+                                                    <ImageView fitWidth="${32.0/12.0 * m.rem}" preserveRatio="true" >
+                                                        <Image url="file:resources/images/trash_icon_52_x_52.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                                <tooltip><Tooltip text="Delete column" /></tooltip>
+                                            </Button>
+                                            <Button fx:id="addAttributeColumnButton" disable="true" prefWidth="${32.0/12.0 * m.rem}" minWidth="${32.0/12.0 * m.rem}" maxWidth="${32.0/12.0 * m.rem}" prefHeight="200">
+                                                <graphic>
+                                                    <ImageView fitWidth="${32.0/12.0 * m.rem}" preserveRatio="true" >
+                                                        <Image url="file:resources/images/add_icon_52_x_52.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                                <tooltip><Tooltip text="Add column" /></tooltip>
+                                            </Button>
+                                        </VBox>
+                                    </HBox>
+                                    <CladeImageViewer fx:id="imageViewer" maxPreviewImageWidth="250.0" maxPreviewImageHeight="250.0" />
+                                </VBox>
+                            </Tab>
+                            <Tab text="Color" closable="false">
+                                <ScrollPane fitToWidth="true" style="-fx-border-width: 1; -fx-border-color: white black black black; -fx-border-style: solid;">
+                                    <VBox spacing="10" alignment="TOP_LEFT">
+                                        <Label text="Color nodes by..." style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.35em 0.666666667em 0.0 0.66666667em;"/>
+                                        <ColorByList fx:id="colorByList" prefHeight="300" />
+                                        <GridPane vgap="10" hgap="10" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.25em 0.666666667em 0.25em 0.66666667em;">
+                                            <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Min value color" />
+                                            <ColorPicker GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="colorByAttributeMinColorPicker" />
+
+                                            <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Max value color" />
+                                            <ColorPicker GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="colorByAttributeMaxColorPicker" />
+
+                                            <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Color representing undefined" />
+                                            <ColorPicker GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="colorByAttributeUndefinedColorPicker" />
+                                        </GridPane>
+                                    </VBox>
+                                </ScrollPane>
+                            </Tab>
+                            <Tab text="Annotations" closable="false">
+                                <ScrollPane fitToWidth="true" style="-fx-border-width: 1; -fx-border-color: white black black black; -fx-border-style: solid;">
+                                    <VBox spacing="10" alignment="TOP_LEFT">
+                                        <Label text="Annotations:" style="-fx-font-size: 1.2em; -fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.35em 0.666666667em 0.0 0.66666667em;"/>
+                                        <AnnotationList fx:id="annotationList" prefHeight="300" />
+                                        <VBox alignment="CENTER" style="-fx-spacing: 5;">
+                                            <HBox alignment="CENTER" style="-fx-spacing: 10;">
+                                                <Button text="Edit" onAction="#handleEditAnnotationAction" style="-fx-font-size: 1.2em;" prefWidth="${(60.0 / 12.0) * m.rem}" prefHeight="${(40.0 / 12.0) * m.rem}" />
+                                                <Button text="Delete" onAction="#handleDeleteAnnotationAction" style="-fx-font-size: 1.2em;" prefWidth="${(75.0 / 12.0) * m.rem}" prefHeight="${(40.0 / 12.0) * m.rem}" />
+                                            </HBox>
+                                        </VBox>
+                                    </VBox>
+                                </ScrollPane>
+                            </Tab>
+                        </TabPane>
+                    </children>
+                </GridPane>
+                
+            </items>
+        </SplitPane>
+        
+        <HBox alignment="CENTER_LEFT" GridPane.fillHeight="true" GridPane.fillWidth="true" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-background-color: whitesmoke;">
+            <Label text="Recognition Status:" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.1666667em 0.1666667em 0.1666667em 1.25em;" />
+            <Rectangle fx:id="statusRect" width="${1.666667 * m.rem}" height="${1.666667 * m.rem}" stroke="black" fill="white" />
+            <!-- css insets: top, right, bottom, and left edges of the region, in that order -->
+            <Label fx:id="zoomLabel" text="Zoom Level: 100.0%" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.1666667em 2.5em 0.1666667em 2.666667em;" />
+            <Label fx:id="translationLabel" text="Translation: (0.0, 0.0)" style="-fx-border-width: 0px; -fx-border-style: solid; -fx-border-insets: 0.1666667em 2.5em 0.1666667em 0.1666667em;" />
+            <Label fx:id="modeLabel" text="Mode: Gesture" style="-fx-padding: 0.25em 0.333333em 0.25em 0.333333em; -fx-border-style: solid; -fx-border-color: gray; -fx-border-width: 1px; -fx-border-insets: 0.1666667em 0 0.1666667em 0;" />
+            <Button fx:id="exitModeButton" text=" X " visible="false" style="-fx-border-style: solid; -fx-border-width: 0px; -fx-border-insets: 0.1666667em 0 0.1666667em 0;" />
+            <Label fx:id="recordingStatusLabel" text="&#x23FA; Recording..." visible="false" style="-fx-padding: 0.25em 0.333333em 0.25em 0.333333em; -fx-border-style:solid; -fx-border-color: red; -fx-border-width: 2px; -fx-text-fill: red; -fx-border-insets: 0.1666667em 0 0.1666667em 0;" />
+        </HBox>
+        
+    </children>
+</GridPane>
